@@ -75,7 +75,7 @@ const councilMembers = [
 
 const axesData = [
     { key: 'mvi' as const, name: 'MVI (多角的視点知性)', icon: '🧠', description: '多角的な視点から本質を捉え、発展を促す力' },
-    { key: 'csi' as const, name: 'CSI (コンセプト統合度)', icon: '🧬', description: '理念から具体策までが一貫し、統合されているか' },
+    { key: 'csi' as const, name: 'CSI (コンセプト統合度)', icon: '�', description: '理念から具体策までが一貫し、統合されているか' },
     { key: 'res' as const, name: 'RES (訴求力・共鳴力)', icon: '🌟', description: '言葉やアウトプットが、他者や市場と響き合う力' },
     { key: 'arc' as const, name: 'ARC (論理構成度)', icon: '❄️', description: '表現の明快さ、論理の一貫性、構造の完成度' }
 ];
@@ -87,7 +87,7 @@ function MainContent() {
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [error, setError] = useState('');
 
-  // --- ▼▼▼ ここで文字数を7000に変更しました ▼▼▼ ---
+  // --- ▼▼▼ 文字数上限を7000に設定 ▼▼▼ ---
   const MAX_CHARS = 7000;
 
   const handleAnalysis = async () => {
@@ -125,10 +125,11 @@ function MainContent() {
           <p className="text-teal-300 text-xl mt-4 tracking-widest">あなたの内部を可視化する</p>
         </header>
 
-        {/* --- ▼▼▼ ここから下が、分析フォームと結果表示のUIです ▼▼▼ --- */}
+        {/* --- ここから下が、分析フォームと結果表示のUIです --- */}
+        {/* この部分はあなたのデザインに合わせて、分析前は入力フォームと説明、分析後は結果を表示します */}
         {!result ? (
           <>
-            {/* --- このセクションは、あなたのデザイン通り残します --- */}
+            {/* 結果がない時に表示されるセクション */}
             <section className="my-28 animate-fade-in-slow">
               <h2 className="text-4xl font-bold text-center mb-16 text-white">コアなる四軸評価</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -153,8 +154,6 @@ function MainContent() {
                 ))}
               </div>
             </section>
-
-            {/* --- ▼▼▼ ここが入力フォーム部分の修正箇所です ▼▼▼ --- */}
             <main id="analysis-form" className="w-full max-w-4xl mx-auto flex-grow flex flex-col items-center justify-center bg-gray-800/30 backdrop-blur-md border border-gray-700 p-8 md:p-12 rounded-2xl shadow-2xl animate-fade-in-slow">
               <div className="w-full text-center">
                 <h2 className="text-3xl font-bold mb-4 text-white">さあ、あなたの思考を解き放とう</h2>
