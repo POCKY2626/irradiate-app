@@ -198,7 +198,7 @@ function MainContent() {
             </div>
             <h2 className="text-2xl font-bold mb-4 text-teal-300">分析結果</h2>
             <div className="mt-10 text-center">
-              <p className="text-3xl sm:text-4xl font-extrabold text-blue-400 tracking-wide">
+              <p className="text-3xl sm:text-4xl font-extrabold text-yellow-200 tracking-wide">
                 🏆 総合スコア：<span className="text-white">{result.overallScore} / 100 点</span>
               </p>
               <p className="mt-2 text-lg text-gray-300 italic">
@@ -226,7 +226,7 @@ function MainContent() {
                       <p className="mt-4 text-base text-gray-100 leading-relaxed">
                         {comments?.evaluationComment || "（評価コメントなし）"}
                       </p>
-                      <p className="mt-4 text-base text-blue-400 italic leading-relaxed">
+                      <p className="mt-4 text-base text-blue-300 italic leading-relaxed">
                         <span className="font-semibold">🌱 改善ヒント：</span>
                         {comments?.improvementComment || "（改善ヒントなし）"}
                       </p>
@@ -254,7 +254,7 @@ function MainContent() {
               <h3 className="text-3xl md:text-4xl font-extrabold text-center text-teal-300 mb-6 tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">🔮 総合インサイト</h3>
               <p className="text-2xl md:text-3xl text-center font-bold text-white mb-4">{`「${result?.concludingInsight?.insightName}」`}</p>
               <p className="text-lg md:text-xl text-gray-100 leading-relaxed whitespace-pre-line text-center">{result?.concludingInsight?.comment}</p>
-              <p className="mt-6 text-sm italic text-blue-400 border-t border-gray-600 pt-3 text-center">🧭 次の問い：{result?.concludingInsight?.question}</p>
+              <p className="mt-6 text-sm italic text-yellow-200 border-t border-gray-600 pt-3 text-center">🧭 次の問い：{result?.concludingInsight?.question}</p>
             </div>
             <div className="mb-12 p-8 bg-gradient-to-r from-yellow-800 via-yellow-700 to-yellow-900 border-4 border-yellow-400 rounded-3xl shadow-[0_0_60px_rgba(234,179,8,0.5)] animate-fade-in-slow">
               <h3 className="text-3xl md:text-4xl font-extrabold text-center text-yellow-300 mb-6 tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">🧙‍♂️ ホメ仙人のことば</h3>
