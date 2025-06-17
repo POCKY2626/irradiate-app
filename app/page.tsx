@@ -120,8 +120,8 @@ function MainContent() {
     <div className="min-h-screen bg-gray-900 text-gray-200 font-sans">
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] opacity-50"></div>
       <div className="relative container mx-auto px-4 py-12 z-10">
-        <header className="w-full text-center mb-20 animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold text-white tracking-wider">イラディエイト評価システム™</h1>
+        <header className="w-full text-center mb-32 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-teal-300 via-cyan-300 to-blue-400 bg-clip-text text-transparent tracking-wider">イラディエイト評価システム™</h1>
           <p className="text-teal-300 text-xl mt-4 tracking-widest">あなたの内部を可視化する</p>
         </header>
 
@@ -130,11 +130,11 @@ function MainContent() {
         {!result ? (
           <>
             {/* 結果がない時に表示されるセクション */}
-            <section className="my-28 animate-fade-in-slow">
-              <h2 className="text-4xl font-bold text-center mb-16 text-white">コアなる四軸評価</h2>
+            <section className="my-32 animate-fade-in-slow">
+              <h2 className="text-4xl font-bold text-center mb-20 text-white">コアなる四軸評価</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {axesData.map(axis => (
-                  <div key={axis.name} className="bg-gray-800/30 backdrop-blur-md border border-gray-700 p-6 rounded-xl text-center hover:border-teal-400 transition-all duration-300">
+                  <div key={axis.name} className="bg-gray-800/30 backdrop-blur-md border border-gray-700 p-8 rounded-xl text-center hover:border-teal-400 hover:bg-gray-800/50 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">
                     <span className="text-6xl">{axis.icon}</span>
                     <h3 className="text-xl font-bold mt-4 text-white">{axis.name}</h3>
                     <p className="text-sm text-gray-400 mt-2">{axis.description}</p>
@@ -142,11 +142,11 @@ function MainContent() {
                 ))}
               </div>
             </section>
-            <section className="my-28 animate-fade-in-slow">
-              <h2 className="text-4xl font-bold text-center mb-16 text-white">あなたの内に眠る、11の人格</h2>
+            <section className="my-32 animate-fade-in-slow">
+              <h2 className="text-4xl font-bold text-center mb-20 text-white">あなたの内に眠る、11の人格</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {councilMembers.map(member => (
-                  <div key={member.name} className="bg-gray-800/30 backdrop-blur-md border border-gray-700 p-5 rounded-xl text-center flex flex-col items-center justify-center hover:bg-gray-700/50 transition duration-300">
+                  <div key={member.name} className="bg-gray-800/30 backdrop-blur-md border border-gray-700 p-5 rounded-xl text-center flex flex-col items-center justify-center hover:bg-gray-700/50 hover:border-teal-400 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer">
                     <span className="text-5xl">{member.icon}</span>
                     <h3 className="text-md font-bold mt-3 text-white">{member.name}</h3>
                     <p className="text-xs text-teal-300 font-semibold">{member.title}</p>
@@ -154,7 +154,7 @@ function MainContent() {
                 ))}
               </div>
             </section>
-            <main id="analysis-form" className="w-full max-w-4xl mx-auto flex-grow flex flex-col items-center justify-center bg-gray-800/30 backdrop-blur-md border border-gray-700 p-8 md:p-12 rounded-2xl shadow-2xl animate-fade-in-slow">
+            <main id="analysis-form" className="w-full max-w-4xl mx-auto mb-32 flex-grow flex flex-col items-center justify-center bg-gray-800/30 backdrop-blur-md border border-gray-700 p-8 md:p-12 rounded-2xl shadow-2xl hover:shadow-[0_0_40px_rgba(45,212,191,0.3)] transition-all duration-300 animate-fade-in-slow">
               <div className="w-full text-center">
                 <h2 className="text-3xl font-bold mb-4 text-white">さあ、あなたの思考を解き放とう</h2>
                 <div className="relative w-full">
@@ -226,7 +226,7 @@ function MainContent() {
                       <p className="mt-4 text-base text-gray-100 leading-relaxed">
                         {comments?.evaluationComment || "（評価コメントなし）"}
                       </p>
-                      <p className="mt-4 text-base text-blue-400 italic leading-relaxed">
+                      <p className="mt-4 text-base text-yellow-300 italic leading-relaxed">
                         <span className="font-semibold">🌱 改善ヒント：</span>
                         {comments?.improvementComment || "（改善ヒントなし）"}
                       </p>
