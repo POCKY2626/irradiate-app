@@ -226,7 +226,7 @@ function MainContent() {
                       <p className="mt-4 text-base text-gray-100 leading-relaxed">
                         {comments?.evaluationComment || "（評価コメントなし）"}
                       </p>
-                      <p className="mt-4 text-base text-yellow-300 italic leading-relaxed">
+                      <p className="mt-4 text-base text-blue-400 italic leading-relaxed">
                         <span className="font-semibold">🌱 改善ヒント：</span>
                         {comments?.improvementComment || "（改善ヒントなし）"}
                       </p>
