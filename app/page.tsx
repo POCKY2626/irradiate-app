@@ -122,6 +122,31 @@ function MainContent() {
           <p className="text-teal-300 text-xl mt-4 tracking-widest">あなたの内部を可視化する</p>
         </header>
 
+                    <section className="my-28 animate-fade-in-slow">
+              <h2 className="text-4xl font-bold text-center mb-16 text-white">コアなる四軸評価</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {axesData.map(axis => (
+                  <div key={axis.name} className="bg-gray-800/30 backdrop-blur-md border border-gray-700 p-6 rounded-xl text-center hover:border-teal-400 transition-all duration-300">
+                    <span className="text-6xl">{axis.icon}</span>
+                    <h3 className="text-xl font-bold mt-4 text-white">{axis.name}</h3>
+                    <p className="text-sm text-gray-400 mt-2">{axis.description}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+            <section className="my-28 animate-fade-in-slow">
+              <h2 className="text-4xl font-bold text-center mb-16 text-white">あなたの内に眠る、11の人格</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                {councilMembers.map(member => (
+                  <div key={member.name} className="bg-gray-800/30 backdrop-blur-md border border-gray-700 p-5 rounded-xl text-center flex flex-col items-center justify-center hover:bg-gray-700/50 transition duration-300">
+                    <span className="text-5xl">{member.icon}</span>
+                    <h3 className="text-md font-bold mt-3 text-white">{member.name}</h3>
+                    <p className="text-xs text-teal-300 font-semibold">{member.title}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
         {!result ? (
           <>
             <main id="analysis-form" className="w-full max-w-4xl mx-auto flex-grow flex flex-col items-center justify-center bg-gray-800/30 backdrop-blur-md border border-gray-700 p-8 md:p-12 rounded-2xl shadow-2xl animate-fade-in-slow">
@@ -146,30 +171,6 @@ function MainContent() {
                 )}
               </div>
             </main>
-            <section className="my-28 animate-fade-in-slow">
-              <h2 className="text-4xl font-bold text-center mb-16 text-white">コアなる四軸評価</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {axesData.map(axis => (
-                  <div key={axis.name} className="bg-gray-800/30 backdrop-blur-md border border-gray-700 p-6 rounded-xl text-center hover:border-teal-400 transition-all duration-300">
-                    <span className="text-6xl">{axis.icon}</span>
-                    <h3 className="text-xl font-bold mt-4 text-white">{axis.name}</h3>
-                    <p className="text-sm text-gray-400 mt-2">{axis.description}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-            <section className="my-28 animate-fade-in-slow">
-              <h2 className="text-4xl font-bold text-center mb-16 text-white">あなたの内に眠る、11の人格</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                {councilMembers.map(member => (
-                  <div key={member.name} className="bg-gray-800/30 backdrop-blur-md border border-gray-700 p-5 rounded-xl text-center flex flex-col items-center justify-center hover:bg-gray-700/50 transition duration-300">
-                    <span className="text-5xl">{member.icon}</span>
-                    <h3 className="text-md font-bold mt-3 text-white">{member.name}</h3>
-                    <p className="text-xs text-teal-300 font-semibold">{member.title}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
           </>
         ) : (
           <section id="result-section" className="mt-12 w-full max-w-4xl mx-auto bg-gray-800/30 border border-gray-700 p-6 rounded-xl text-white animate-fade-in-slow">
