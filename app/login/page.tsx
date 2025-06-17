@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-// ★★★ ここに、あなたが決めたいパスワードを入力してください ★★★
-const CORRECT_PASSWORD = "your-secret-password";
+// .env.localからパスワードを読み込む
+const CORRECT_PASSWORD = process.env.NEXT_PUBLIC_LOGIN_PASSWORD;
 
 export default function LoginPage() {
   const [password, setPassword] = useState('');
@@ -11,8 +11,14 @@ export default function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // パスワードが設定されていなければ、エラーを表示
+    if (!CORRECT_PASSWORD) {
+        setError('アプリケーションのパスワードが設定されていません。');
+        return;
+    }
+
     if (password === CORRECT_PASSWORD) {
-      // パスワードが正しければ、ブラウザに保存する
       try {
         localStorage.setItem('password', password);
         window.location.href = '/'; // メインページに移動
