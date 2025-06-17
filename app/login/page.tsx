@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-// .env.localからパスワードを読み込む
+// .env.localからパスワードを読み込む（ブラウザ用）
 const CORRECT_PASSWORD = process.env.NEXT_PUBLIC_LOGIN_PASSWORD;
 
 export default function LoginPage() {
@@ -12,16 +12,21 @@ export default function LoginPage() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // パスワードが設定されていなければ、エラーを表示
     if (!CORRECT_PASSWORD) {
-        setError('アプリケーションのパスワードが設定されていません。');
-        return;
+      setError('アプリケーションのパスワードが設定されていません。');
+      return;
     }
 
     if (password === CORRECT_PASSWORD) {
       try {
+        // ✅ middleware用のCookieを保存
+        document.cookie = `password-protected=${password}; path=/;`;
+
+        // ✅ AuthCheckerなどクライアント側用にlocalStorageにも保存
         localStorage.setItem('password', password);
-        window.location.href = '/'; // メインページに移動
+
+        // ✅ メインページにリダイレクト
+        window.location.href = '/';
       } catch (e) {
         setError('ブラウザのストレージが利用できません。');
       }
